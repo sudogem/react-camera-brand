@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -d --watch",
     "build": "webpack",
-    "serve": "serve ./public"
+    "serve": "simplehttpserver ./public"
   },
   "repository": {
     "type": "git",
@@ -35,7 +35,6 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
-    "server": "^1.0.0-alpha.39",
     "webpack": "^2.5.1"
   }
 }
