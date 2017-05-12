@@ -1,11 +1,12 @@
-var webpack = require('webpack')
-var path = require('path')
+const path = require('path')
 
-var BUILDDIR = path.resolve(__dirname, 'public/')
-var APPDIR = path.resolve(__dirname, 'src/')
+const BUILDDIR = path.join(__dirname, 'public/')
+const APPDIR = path.join(__dirname, 'src/')
 
-var config = {
-  entry: APPDIR + '/index.jsx',
+const config = {
+  entry: {
+    app: './src/index.jsx'
+  },
   output: {
     path: BUILDDIR,
     filename: 'bundle.js'
@@ -13,8 +14,8 @@ var config = {
   module: {
     loaders: [{
       test: /\.jsx?/,
-      include: APPDIR,
       exclude: /node_modules/,
+      include: APPDIR,
       loader: 'babel-loader'
     }]
   }

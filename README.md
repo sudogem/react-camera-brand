@@ -6,4 +6,4 @@ $ cd react-camera-brand
 $ npm install -g simplehttpserver  
 $ yarn install  
 $ yarn build  
-$ yarn start   
+$ yarn serve   
