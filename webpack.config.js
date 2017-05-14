@@ -5,7 +5,7 @@ const APPDIR = path.join(__dirname, 'src/')
 
 const config = {
   entry: {
-    app: './src/index.jsx'
+    app: APPDIR + 'index.jsx'
   },
   output: {
     path: BUILDDIR,
@@ -13,12 +13,12 @@ const config = {
   },
   module: {
     loaders: [{
-      test: /\.jsx?/,
+      test: /\.jsx$/,
       exclude: /node_modules/,
-      include: APPDIR,
       loader: 'babel-loader'
     }]
-  }
+  },
+  devtool: '#source-map'
 }
 
 module.exports = config

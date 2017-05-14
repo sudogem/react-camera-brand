@@ -1,10 +1,12 @@
 // Libraries
-import React, { Component} from 'react';
+import React from 'react'
+import Nav from './nav.jsx'
 
-class About extends Component {
-  render() {
-    return (<h1>About</h1>)
-  }
-}
+const About = () => (
+  <div>
+    <Nav />
+    <h1>About</h1>
+  </div>
+)
 
 export default About
