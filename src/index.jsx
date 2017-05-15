@@ -5,10 +5,10 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router'  // for reac
 // import { BrowserRouter as Router, Route, Link, browserHistory } from 'react-router-dom' // for react-router 4
 
 // Components
-import Home from './components/home.jsx'
-import About from './components/about.jsx'
-import Camera from './components/camera.jsx'
-import NotFound from './components/notFound.jsx'
+import Home from './components/home'
+import About from './components/about'
+import Camera from './components/camera'
+import NotFound from './components/notFound'
 
 const data = [
   {
