@@ -1,12 +1,10 @@
 // Libraries
-import React, {Component} from 'react'
-import Nav from './nav.jsx'
+import React, { Component } from 'react'
 
 class Camera extends Component {
   render () {
     return (
       <div>
-        <Nav />
         <h1>Camera</h1>
       </div>
     )

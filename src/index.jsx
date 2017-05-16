@@ -1,6 +1,6 @@
 // Libraries
-import React, {Component} from 'react'
-import {render} from 'react-dom'
+import React, { Component } from 'react'
+import { render } from 'react-dom'
 import {Router, Route, IndexRoute, hashHistory} from 'react-router'  // for react-router 3
 // import { BrowserRouter as Router, Route, Link, browserHistory } from 'react-router-dom' // for react-router 4
 
@@ -9,6 +9,7 @@ import Home from './components/home'
 import About from './components/about'
 import Camera from './components/camera'
 import NotFound from './components/notFound'
+import NavContainer from './components/navcontainer'
 
 const data = [
   {
@@ -30,11 +31,12 @@ class Main extends Component {
     return (
       <Router history={hashHistory}>
         <div>
-          <IndexRoute component={Home} data={data} />
-          <Route path="/" component={Home} data={data} />
-          <Route path="/camera" component={Camera} />
-          <Route path="/about" component={About} data={data} />
-          <Route path="*" component={NotFound} />
+          <Route path="/" component={NavContainer}>
+            <IndexRoute component={Home} data={data} />
+            <Route path="/camera" component={Camera} />
+            <Route path="/about" component={About} data={data} />
+            <Route path="*" component={NotFound} />
+          </Route>
         </div>
       </Router>
     )

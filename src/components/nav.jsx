@@ -1,6 +1,8 @@
 // Libraries
 import React from 'react'
-import {Link} from 'react-router'
+
+// Components
+import { Link } from 'react-router'
 
 const Nav = () => (
   <div>
