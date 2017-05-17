@@ -33,7 +33,7 @@ class Main extends Component {
         <div>
           <Route path="/" component={NavContainer}>
             <IndexRoute component={Home} data={data} />
-            <Route path="/camera" component={Camera} />
+            <Route path="/camera" component={Camera} data={data} />
             <Route path="/about" component={About} data={data} />
             <Route path="*" component={NotFound} />
           </Route>
