@@ -92,20 +92,17 @@ class Home extends Component {
   }
 
   render () {
-    // /*let cameraListing = this.props.route.data.map(function (item, idx) {
-    //   return (
-    //     <div key={idx}>
-    //       <h3>{item.name}</h3>
-    //       <p>{item.desc}</p>
-    //     </div>
-    //   )
-    // })*/
-    // /*return (
-    //   <div>
-    //     <h1>Home</h1>
-    //     <CameraListing data={this.props.route.data} />
-    //   </div>
-    // )*/
+    let cameraListing = this.props.route.data.map(function (item, idx) {
+      return (
+        <Col md={4} key={idx}>
+          <h3>{item.title }</h3>
+          <h4>{item.subtitle}</h4>
+          <p>{item.desc}</p>
+          <p><Button>View details »</Button></p>
+        </Col>
+      )
+    })
+
     return (
       <div>
         <Jumbotron>
@@ -116,21 +113,7 @@ class Home extends Component {
         </Jumbotron>
         <Grid>
           <Row>
-            <Col md={4}>
-              <h4>Heading</h4>
-              <p>Adipisicing ratione incidunt eaque expedita rerum porro inventore. Nihil sit ipsam iure officiis sit eos at quibusdam natus dignissimos natus dolore! Vel doloremque ipsa alias nihil harum laborum necessitatibus rerum?</p>
-              <p><Button>View details »</Button></p>
-            </Col>
-            <Col md={4}>
-              <h4>Heading</h4>
-              <p>Sit quia nemo quis enim provident porro eaque accusamus tenetur provident aliquid commodi? Velit nesciunt maiores obcaecati totam praesentium sint vitae exercitationem quaerat maxime iusto et! Consequatur aspernatur sit impedit.</p>
-              <p><Button>View details »</Button></p>
-            </Col>
-            <Col md={4}>
-              <h4>Heading</h4>
-              <p>Dolor aliquid dolores perferendis repellendus cum! Quam maiores blanditiis cupiditate voluptatibus voluptas aliquid nisi placeat tempora. Rem debitis accusamus pariatur officia corrupti. Architecto fuga reiciendis quos rem hic? Suscipit dignissimos.</p>
-              <p><Button>View details »</Button></p>
-            </Col>
+            {cameraListing}
           </Row>
         </Grid>
       </div>

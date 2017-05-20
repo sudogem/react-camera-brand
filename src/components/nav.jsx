@@ -28,9 +28,9 @@ const TopNav = () => (
       </Navbar.Brand>
     </Navbar.Header>
     <Nav>
-      <NavItem eventKey={1} href="#"><Link to="/">Home</Link></NavItem>
-      <NavItem eventKey={2} href="#"><Link to="/camera">Camera</Link></NavItem>
-      <NavItem eventKey={3} href="#"><Link to="/about">About</Link></NavItem>
+      <NavItem eventKey={1} href="#/"></NavItem>
+      <NavItem eventKey={2} href="#/camera">Camera</NavItem>
+      <NavItem eventKey={3} href="#/about">About</NavItem>
       <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
         <MenuItem eventKey={3.1}>Action</MenuItem>
         <MenuItem eventKey={3.2}>Another action</MenuItem>
