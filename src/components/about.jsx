@@ -1,10 +1,13 @@
 // Libraries
 import React from 'react'
+import Grid from 'react-bootstrap/lib/Grid'
+import Row from 'react-bootstrap/lib/Row'
+import Col from 'react-bootstrap/lib/Col'
 
 const About = () => (
-  <div>
+  <Grid>
     <h1>About</h1>
-  </div>
+  </Grid>
 )
 
 export default About
