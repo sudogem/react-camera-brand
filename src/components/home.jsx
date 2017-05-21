@@ -6,11 +6,22 @@ import Grid from 'react-bootstrap/lib/Grid'
 import Row from 'react-bootstrap/lib/Row'
 import Col from 'react-bootstrap/lib/Col'
 import Button from 'react-bootstrap/lib/Button'
+import Modal from 'react-bootstrap/lib/Modal'
 
 // Components
 // import CameraListing from './cameraListings'
 
 class Home extends Component {
+  constructor () {
+    super()
+    this.state = {
+      showModal: false,
+      cameraDetails: {}
+    }
+    this.openModal = this.openModal.bind(this)
+    this.closeModal = this.closeModal.bind(this)
+  }
+
   mediaAlignmentInstance () {
     return (
       <div>
@@ -91,14 +102,28 @@ class Home extends Component {
     )
   }
 
+  openModal (item) {
+    console.log(item)
+    this.setState({ showModal: true, cameraDetails: item})
+    // var stateCopy = Object.assign({}, this.state);
+    // stateCopy.items = stateCopy.items.slice();
+    // stateCopy.items[key] = Object.assign({}, stateCopy.items[key]);
+    // stateCopy.items[key].upVotes += 1;
+  }
+
+  closeModal () {
+    this.setState({ showModal: false })
+  }
+
   render () {
+    var self = this
     let cameraListing = this.props.route.data.map(function (item, idx) {
       return (
         <Col md={4} key={idx}>
           <h3>{item.title }</h3>
           <h4>{item.subtitle}</h4>
           <p>{item.desc}</p>
-          <p><Button>View details »</Button></p>
+          <p><Button onClick={(e) => self.openModal(item)}>View details »</Button></p>
         </Col>
       )
     })
@@ -116,6 +141,17 @@ class Home extends Component {
             {cameraListing}
           </Row>
         </Grid>
+
+        <Modal show={this.state.showModal} onHide={this.closeModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>{this.state.cameraDetails.title} </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h3>{this.state.title}</h3>
+            <h4>{this.state.subtitle}</h4>
+            <p>{this.state.cameraDetails.desc}</p>
+          </Modal.Body>
+        </Modal>
       </div>
     )
   }
