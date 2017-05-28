@@ -157,11 +157,8 @@ class Home extends Component {
           </Media>
         </div>*/
         <Col md={4} key={idx}>
-          <h3>{item.title }</h3>
+          <h3>{item.title}</h3>
           <h4>{item.subtitle}</h4>
-          {/*<Truncate lines={2} ellipsis={<span>...</span>}>
-            {item.desc}
-          </Truncate>*/}
           <Readmore message={item.desc} />
           <p><Button onClick={(e) => self.openModal(item)}>View more details »</Button></p>
         </Col>

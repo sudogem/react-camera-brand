@@ -4,31 +4,43 @@ import Grid from 'react-bootstrap/lib/Grid'
 import Row from 'react-bootstrap/lib/Row'
 import Col from 'react-bootstrap/lib/Col'
 import Button from 'react-bootstrap/lib/Button'
-
-// Components
-// import CameraListing from './cameraListings'
+import Media from 'react-bootstrap/lib/Media'
 
 class Camera extends Component {
-
   render () {
+    let cameraListing = this.props.route.data.map(function (item, idx) {
+      return (
+        <div>
+          <Media.Left align="top">
+            <img width={64} height={64} src="/assets/thumbnail.png" alt="Image"/>
+          </Media.Left>
+          <Media.Body>
+            <Media.Heading>{item.title}</Media.Heading>
+            <p>{item.desc}</p>
+          </Media.Body>
+        </div>
+      )
+    })
     return (
         <Grid>
           <h1>Camera</h1>
           <Row>
-            <Col md={4}>
-              <h4>Heading</h4>
-              <p>Adipisicing ratione incidunt eaque expedita rerum porro inventore. Nihil sit ipsam iure officiis sit eos at quibusdam natus dignissimos natus dolore! Vel doloremque ipsa alias nihil harum laborum necessitatibus rerum?</p>
-              <p><Button>View details »</Button></p>
+            <Col md={6}>
+              {cameraListing}
             </Col>
-            <Col md={4}>
-              <h4>Heading</h4>
-              <p>Sit quia nemo quis enim provident porro eaque accusamus tenetur provident aliquid commodi? Velit nesciunt maiores obcaecati totam praesentium sint vitae exercitationem quaerat maxime iusto et! Consequatur aspernatur sit impedit.</p>
-              <p><Button>View details »</Button></p>
-            </Col>
-            <Col md={4}>
-              <h4>Heading</h4>
-              <p>Dolor aliquid dolores perferendis repellendus cum! Quam maiores blanditiis cupiditate voluptatibus voluptas aliquid nisi placeat tempora. Rem debitis accusamus pariatur officia corrupti. Architecto fuga reiciendis quos rem hic? Suscipit dignissimos.</p>
-              <p><Button>View details »</Button></p>
+            <Col md={6}>
+              <h4>Manage Camera</h4>
+              <form action="">
+                <div className="form-group">
+                  <label htmlFor="title">Title</label>
+                  <input type="text" className="form-control" id="title" placeholder="Title" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="description">Description</label>
+                  <textarea type="text" className="form-control" id="description" placeholder="Description" />
+                </div>
+              </form>
+
             </Col>
           </Row>
         </Grid>
