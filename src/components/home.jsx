@@ -8,9 +8,10 @@ import Col from 'react-bootstrap/lib/Col'
 import Button from 'react-bootstrap/lib/Button'
 import Modal from 'react-bootstrap/lib/Modal'
 import PropTypes from 'prop-types'
+import Truncate from 'react-truncate'
 
 // Components
-// import CameraListing from './cameraListings'
+import Readmore from './readmore'
 
 class Home extends Component {
   constructor () {
@@ -117,9 +118,10 @@ class Home extends Component {
   }
 
   render () {
+    const self = this
     let cameraListing = this.props.route.data.map(function (item, idx) {
       return (
-        <div>
+        /*<div>
           <Media>
             <Media.Left align="top">
               <img width={64} height={64} src="/assets/thumbnail.png" alt="Image"/>
@@ -153,13 +155,16 @@ class Home extends Component {
               <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
             </Media.Body>
           </Media>
-        </div>
-        /*<Col md={4} key={idx}>
+        </div>*/
+        <Col md={4} key={idx}>
           <h3>{item.title }</h3>
           <h4>{item.subtitle}</h4>
-          <p>{item.desc}</p>
-          <p><Button onClick={(e) => self.openModal(item)}>View details »</Button></p>
-        </Col>*/
+          {/*<Truncate lines={2} ellipsis={<span>...</span>}>
+            {item.desc}
+          </Truncate>*/}
+          <Readmore message={item.desc} />
+          <p><Button onClick={(e) => self.openModal(item)}>View more details »</Button></p>
+        </Col>
       )
     })
 
